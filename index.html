@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .pva-webchat {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            height: 400px;
+            border: 2px solid #0A5C36; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: none; 
+            z-index: 1000;
+        }
+
+        .toggle-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            border: none;
+            cursor: pointer;
+            background-image: url('chattt.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            z-index: 1001;
+        }
+    </style>
+</head>
+<body>
+
+<button class="toggle-button" onclick="toggleChatbot()"></button>
+
+<!-- Power Virtual Agents webchat iframe -->
+<iframe id="pvaWebchat" class="pva-webchat" src="https://copilotstudio.microsoft.com/environments/Default-ca6a4b3f-9123-49bc-bcb9-27085ebbf1a1/bots/crd8e_copilot1/webchat?__version__=2" frameborder="0"></iframe>
+
+<script>
+    function toggleChatbot() {
+        var iframe = document.getElementById('pvaWebchat');
+        iframe.style.display = (iframe.style.display == 'block') ? 'none' : 'block';
+    }
+</script>
+
+</body>
+</html>
